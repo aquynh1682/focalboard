@@ -15,6 +15,7 @@ import {createBrowserHistory, History} from 'history'
 import {IAppWindow} from './types'
 import BoardPage from './pages/boardPage/boardPage'
 import ChangePasswordPage from './pages/changePasswordPage'
+import Analytics from './pages/Analytics'
 import WelcomePage from './pages/welcome/welcomePage'
 import ErrorPage from './pages/errorPage'
 import LoginPage from './pages/loginPage'
@@ -164,7 +165,10 @@ const FocalboardRouter = (props: Props): JSX.Element => {
                     <FBRoute path='/change_password'>
                         <ChangePasswordPage/>
                     </FBRoute>}
-
+                {!isPlugin &&
+                    <FBRoute path='/analytics'>
+                        <Analytics/>
+                    </FBRoute>}
                 <FBRoute path={['/team/:teamId/new/:channelId']}>
                     <BoardPage new={true}/>
                 </FBRoute>

@@ -79,7 +79,13 @@ const SidebarUserMenu = () => {
                                     setShowRegistrationLinkDialog(true)
                                 }}
                             />
-
+                            <Menu.Text
+                                id='analytics'
+                                name={intl.formatMessage({id: 'Sidebar.analytics', defaultMessage: 'Analytics'})}
+                                onClick={async () => {
+                                    history.push('/analytics')
+                                }}
+                            />
                             <Menu.Separator/>
                         </>}
 

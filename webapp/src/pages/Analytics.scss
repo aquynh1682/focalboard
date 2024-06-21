@@ -1,0 +1,52 @@
+@import '../styles/variables';
+
+.analyticsPage {
+    font-family: 'Arial, sans-serif';
+    padding: 20px;
+    background-color: $background-color;
+    color: $text-color;
+
+    .header {
+        background-color: $primary-color;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .mainContent {
+        .analyticsSection {
+            h2 {
+                font-size: 1.5rem;
+                color: $secondary-color;
+                margin-bottom: 20px;
+            }
+
+            .analyticsGrid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+
+                .analyticsCard {
+                    background-color: $card-background-color;
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+                    h3 {
+                        margin: 0 0 10px;
+                        font-size: 1.2rem;
+                        color: $card-title-color;
+                    }
+
+                    p {
+                        margin: 0;
+                        font-size: 1.5rem;
+                        color: $card-text-color;
+                    }
+                }
+            }
+        }
+    }
+}

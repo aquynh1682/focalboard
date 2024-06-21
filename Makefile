@@ -1,7 +1,7 @@
 .PHONY: prebuild clean cleanall ci server server-mac server-linux server-win server-linux-package generate watch-server webapp mac-app win-app-wpf linux-app modd-precheck templates-archive
 
 PACKAGE_FOLDER = focalboard
-
+CURDIR := $(shell pwd)
 # Build Flags
 BUILD_NUMBER ?= $(BUILD_NUMBER:)
 BUILD_DATE = $(shell date -u)
@@ -34,8 +34,8 @@ endif
 all: webapp server ## Build server and webapp.
 
 prebuild: ## Run prebuild actions (install dependencies etc.).
-	cd webapp; npm install
-	cd mattermost-plugin/webapp; npm install
+	cd $(CURDIR)/webapp; npm install
+	cd $(CURDIR)/mattermost-plugin/webapp; npm install
 
 ci: webapp-ci server-test ## Simulate CI, locally.
 
